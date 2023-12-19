@@ -22,9 +22,9 @@ export default function UserRegistration() {
         if(formData.password != formData.confirmpassword){
             alert("Password doesn't match");
         } else {
-            axios.post("http://localhost:8080/registration", formData).then(
+            axios.get("http://localhost:8080/registration", formData).then(
                 (res)=>{  // call back
-                    console.log(res.data)
+                    console.log(res.data.msg)
                 }
             )
         }
