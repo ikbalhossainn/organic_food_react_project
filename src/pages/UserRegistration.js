@@ -8,8 +8,8 @@ export default function UserRegistration() {
     const [formData, SetFormData] = useState({});
 
     const changeHandler = (e) =>{
-        const name = e.target.name;
-        const value = e.target.value;
+        const name = e.target.name; // field name
+        const value = e.target.value; // field value
 
         SetFormData((val)=>({...val, [name]:value})) // spread operator, scope regulation, call back function. have to be clear
     }
@@ -24,7 +24,7 @@ export default function UserRegistration() {
         } else {
             axios.get("http://localhost:8080/registration", formData).then(
                 (res)=>{  // call back
-                    console.log(res.data.msg)
+                    console.log(res.data.fname)
                 }
             )
         }
